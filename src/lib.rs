@@ -15,6 +15,9 @@ pub mod cli;
 pub mod report;
 pub mod os_fingerprint;
 
+#[cfg(feature = "python")]
+pub mod python;
+
 // Re-export commonly used types
 pub use config::AppConfig;
 pub use error::{ScanError, ScanResult};

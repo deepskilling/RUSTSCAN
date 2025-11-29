@@ -4,7 +4,7 @@
 //! Allows loading custom signatures and saving fingerprint collections.
 
 use crate::error::{ScanResult, ScanError};
-use super::fingerprint_db::{OsFingerprintDatabase, OsSignature, OsFamily};
+use super::fingerprint_db::{OsFingerprintDatabase, OsSignature};
 use serde::{Deserialize, Serialize};
 use std::fs;
 use std::path::Path;

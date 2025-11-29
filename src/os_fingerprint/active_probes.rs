@@ -622,7 +622,7 @@ impl ActiveProbeLibrary {
         port: u16,
         index: usize,
     ) -> ScanResult<SeqProbeResponse> {
-        let flags = TcpFlags {
+        let _flags = TcpFlags {
             syn: true,
             ack: false,
             fin: false,
@@ -633,8 +633,8 @@ impl ActiveProbeLibrary {
             cwr: false,
         };
         
-        let options = vec![2, 4, 5, 0xb4]; // MSS option
-        let src_port = 50100 + index as u16;
+        let _options = vec![2, 4, 5, 0xb4]; // MSS option
+        let _src_port = 50100 + index as u16;
         let seq = 0x11111111 + (index as u32 * 0x1000);
         
         // In a real implementation, would build and send TCP SYN packet

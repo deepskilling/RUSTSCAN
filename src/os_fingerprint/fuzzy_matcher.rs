@@ -5,9 +5,8 @@
 
 use crate::error::ScanResult;
 use super::fingerprint_db::{OsFingerprintDatabase, OsSignature, OsFamily};
-use super::{OsFingerprint, matcher::OsMatchResult};
+use super::OsFingerprint;
 use serde::{Deserialize, Serialize};
-use std::collections::HashMap;
 use tracing::{debug, info};
 
 /// Fuzzy matcher with advanced matching algorithms

@@ -1,8 +1,37 @@
 # Rust
 /target/
 **/*.rs.bk
-*.pdb
-Cargo.lock
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyO3
+*.pyd
+
+# Virtual environments
+venv/
+ENV/
+env/
 
 # IDE
 .vscode/
@@ -10,29 +39,29 @@ Cargo.lock
 *.swp
 *.swo
 *~
-.DS_Store
 
-# Logs
-logs/
-*.log
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+*.cover
 
-# Output
-results/
-output/
+# Reports
+reports/
+*.json
+*.yaml
+*.html
+!examples/*.json
+!examples/*.yaml
 
-# Config overrides (keep the sample)
-config.local.toml
-
-# Test files
-test_*.txt
-targets.txt
-
-# Temporary files
-tmp/
-temp/
-
-# Environment variables (NEVER commit!)
+# Environment
 .env
 .env.local
-.env.*.local
 
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
