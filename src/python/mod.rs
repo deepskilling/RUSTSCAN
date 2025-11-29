@@ -21,7 +21,7 @@ use pyo3::prelude::*;
 /// Initialize the Python module
 #[cfg(feature = "python")]
 #[pymodule]
-fn nrmap_rs(_py: Python, m: &PyModule) -> PyResult<()> {
+fn _nrmap_rs(_py: Python, m: &PyModule) -> PyResult<()> {
     // Phase 1: Core Scanner
     m.add_class::<phase1_scanner::PyScanner>()?;
     m.add_class::<phase1_scanner::PyHostStatus>()?;
