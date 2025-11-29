@@ -15,6 +15,7 @@ pub struct FuzzyMatcher {
     /// Minimum score threshold for reporting (0.0 - 1.0)
     min_threshold: f64,
     /// Enable partial matching
+    #[allow(dead_code)]
     enable_partial_match: bool,
 }
 

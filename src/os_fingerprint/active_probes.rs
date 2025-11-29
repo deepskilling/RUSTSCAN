@@ -142,7 +142,9 @@ pub struct ActiveProbeResults {
 
 /// Active probe library
 pub struct ActiveProbeLibrary {
+    #[allow(dead_code)]
     timeout_ms: u64,
+    #[allow(dead_code)]
     max_retries: u8,
 }
 
