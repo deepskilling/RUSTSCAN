@@ -1,0 +1,38 @@
+# Rust
+/target/
+**/*.rs.bk
+*.pdb
+Cargo.lock
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+logs/
+*.log
+
+# Output
+results/
+output/
+
+# Config overrides (keep the sample)
+config.local.toml
+
+# Test files
+test_*.txt
+targets.txt
+
+# Temporary files
+tmp/
+temp/
+
+# Environment variables (NEVER commit!)
+.env
+.env.local
+.env.*.local
+

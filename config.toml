@@ -1,0 +1,193 @@
+# NrMAP Scanner Configuration File
+# This is the single source of truth for all scanner settings
+
+[general]
+# Application name and version
+app_name = "NrMAP"
+version = "0.1.0"
+
+[logging]
+# Logging level: trace, debug, info, warn, error
+level = "info"
+# Log format: text or json
+format = "text"
+# Enable file logging
+file_logging = true
+# Log directory
+log_dir = "./logs"
+# Max log file size in MB
+max_file_size = 10
+# Number of rotated log files to keep
+max_files = 5
+
+[scanner]
+# Default timeout for connections (milliseconds)
+default_timeout_ms = 5000
+# Maximum number of concurrent scans
+max_concurrent_scans = 1000
+# Enable adaptive throttling
+adaptive_throttling = true
+# Initial packets per second rate
+initial_pps = 1000
+# Maximum packets per second
+max_pps = 10000
+# Minimum packets per second
+min_pps = 100
+
+[scanner.host_discovery]
+# Enable host discovery
+enabled = true
+# Discovery method: icmp, tcp, udp, arp
+method = "icmp"
+# Timeout for host discovery (milliseconds)
+timeout_ms = 3000
+# Number of retries
+retries = 2
+
+[scanner.tcp_connect]
+# Enable TCP connect scan
+enabled = true
+# Connection timeout (milliseconds)
+timeout_ms = 5000
+# Number of retries for failed connections
+retries = 1
+# Delay between retries (milliseconds)
+retry_delay_ms = 100
+
+[scanner.tcp_syn]
+# Enable TCP SYN scan (requires elevated privileges)
+enabled = true
+# SYN scan timeout (milliseconds)
+timeout_ms = 3000
+# Number of retries
+retries = 2
+# Delay between retries (milliseconds)
+retry_delay_ms = 50
+
+[scanner.udp]
+# Enable UDP scan
+enabled = true
+# UDP scan timeout (milliseconds)
+timeout_ms = 5000
+# Number of retries (UDP is unreliable)
+retries = 3
+# Delay between retries (milliseconds)
+retry_delay_ms = 200
+
+[throttling]
+# Enable adaptive throttling
+enabled = true
+# Success rate threshold to increase speed (0.0 - 1.0)
+success_threshold = 0.95
+# Success rate threshold to decrease speed (0.0 - 1.0)
+failure_threshold = 0.80
+# Rate adjustment factor (multiplier)
+rate_increase_factor = 1.5
+rate_decrease_factor = 0.5
+# Window size for calculating success rate (number of packets)
+window_size = 100
+# Adjustment interval (milliseconds)
+adjustment_interval_ms = 1000
+
+[output]
+# Default output format: json, yaml, text
+format = "json"
+# Output directory for scan results
+output_dir = "./results"
+# Include timestamps in output
+include_timestamps = true
+# Verbose output
+verbose = false
+
+[security]
+# Require elevated privileges check before raw socket operations
+require_privileges_check = true
+# Maximum target IPs per scan (safety limit)
+max_targets = 65536
+# Maximum ports per scan
+max_ports = 65535
+
+[packet_engine]
+# Enable raw packet crafting and parsing
+enabled = true
+# Default TTL for crafted packets
+default_ttl = 64
+# Enable packet validation
+validate_packets = true
+
+[detection_engine]
+# Enable service detection
+enable_service_detection = true
+# Enable OS detection
+enable_os_detection = true
+# Enable banner grabbing
+enable_banner_grabbing = true
+# Banner grab timeout (milliseconds)
+banner_timeout_ms = 5000
+# Maximum banner size (bytes)
+max_banner_size = 1024
+
+[os_fingerprint]
+# Enable TCP/IP stack fingerprinting
+enable_tcp_fingerprinting = true
+# Enable ICMP-based fingerprinting
+enable_icmp_fingerprinting = true
+# Enable UDP fingerprinting
+enable_udp_fingerprinting = true
+# Enable protocol/service hints
+enable_protocol_hints = true
+# Enable clock skew analysis
+enable_clock_skew = true
+# Enable passive fingerprinting (requires packet capture)
+enable_passive = false
+# Enable active probe library (T1-T7, U1, IE, SEQ, ECN) - VERY INTRUSIVE!
+enable_active_probes = false
+# TCP fingerprinting timeout (milliseconds)
+tcp_timeout_ms = 5000
+# ICMP fingerprinting timeout (milliseconds)
+icmp_timeout_ms = 3000
+# UDP fingerprinting timeout (milliseconds)
+udp_timeout_ms = 3000
+# Protocol analysis timeout (milliseconds)
+protocol_timeout_ms = 5000
+# Active probes timeout (milliseconds)
+active_probes_timeout_ms = 3000
+# Number of samples for clock skew analysis
+clock_skew_samples = 20
+# Minimum observations needed for passive fingerprinting
+passive_min_observations = 10
+# Number of SEQ probes for ISN analysis
+seq_probes_count = 6
+# Maximum retries for fingerprinting probes
+max_retries = 2
+# Confidence threshold for OS matching (0.0 - 1.0)
+confidence_threshold = 0.75
+
+[distributed]
+# Enable distributed scanning
+enable_distributed = false
+# Scheduler listening port
+scheduler_port = 8080
+# Agent listening port
+agent_port = 8081
+# Maximum number of agents
+max_agents = 10
+# Job timeout (seconds)
+job_timeout_seconds = 3600
+# Result retention time (hours)
+result_retention_hours = 24
+
+[report_engine]
+# Default report format: json, yaml, html, table
+default_format = "json"
+# Enable HTML reports
+enable_html = true
+# Enable automatic report saving
+auto_save_reports = false
+# Report output directory
+report_output_dir = "./reports"
+# Include detailed results in reports
+include_detailed_results = true
+# Pretty print JSON/YAML
+pretty_print = true
+

@@ -1,0 +1,56 @@
+[package]
+name = "nrmap"
+version = "0.1.0"
+edition = "2021"
+authors = ["Your Name <your.email@example.com>"]
+description = "High-performance network scanner written in Rust"
+license = "MIT"
+
+[dependencies]
+# Async runtime
+tokio = { version = "1.35", features = ["full"] }
+async-trait = "0.1"
+
+# Network and raw sockets
+socket2 = "0.5"
+pnet = "0.34"
+pnet_packet = "0.34"
+
+# Configuration
+config = "0.14"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+serde_yaml = "0.9"
+toml = "0.8"
+
+# Logging
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "fmt", "json"] }
+tracing-appender = "0.2"
+
+# Error handling
+thiserror = "1.0"
+anyhow = "1.0"
+
+# CLI (for future use)
+clap = { version = "4.4", features = ["derive"] }
+
+# Utilities
+chrono = { version = "0.4", features = ["serde"] }
+futures = "0.3"
+rand = "0.8"
+libc = "0.2"
+uuid = { version = "1.6", features = ["v4", "serde"] }
+
+[dev-dependencies]
+mockall = "0.12"
+tempfile = "3.8"
+
+[lib]
+name = "nrmap"
+path = "src/lib.rs"
+
+[[bin]]
+name = "nrmap"
+path = "src/main.rs"
+
