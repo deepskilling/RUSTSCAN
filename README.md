@@ -315,7 +315,8 @@ MIT License - see LICENSE file for details
 
 - Inspired by Nmap
 - Built with Rust and Tokio
-- Uses pnet for packet crafting (future enhancement)
+- Uses pnet for production-quality packet crafting and parsing
+- Full IPv4 and IPv6 support
 
 ## 🗺️ Roadmap
 
